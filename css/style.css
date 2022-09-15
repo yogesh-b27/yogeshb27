@@ -70,6 +70,17 @@ h2{
     background-color: var(--main-clr);
     color: var(--white2);
 }
+.heading{
+    font-size: 4rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--white2);
+    text-align: center;
+    margin: 3rem auto;
+    font-weight: 700;
+    opacity: 0.7;
+}
+
 
 /* header section */
 header{
@@ -177,4 +188,26 @@ h4{
 .social a:hover{
     background: var(--main-clr);
     color: var(--white);
+}
+
+/* about section */
+.about-content{
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+}
+.about-text{
+    margin-top: 2rem;
+}
+.Sphere{
+    color: var(--main-clr);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.tagcloud{
+    display: inline-block;
+    font-weight: bold;
+    letter-spacing: 1px;
+    font-size: 3rem;
 }
