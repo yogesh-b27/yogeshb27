@@ -227,7 +227,7 @@ h4{
     height: 30rem;
     border-radius: .5rem;
     overflow: hidden;
-    /* display: none; */
+    display: none;
 }
 .project-box img{
     width: 100%;
@@ -267,3 +267,12 @@ h4{
 .project-box:hover .project-overlay{
     top: 0;
 } 
+.project-box:nth-child(1),
+.project-box:nth-child(2),
+.project-box:nth-child(3){
+    display: inline-block;
+}
+#load-more{
+    grid-column-start: 1;
+    grid-column-end: 4;
+}
