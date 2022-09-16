@@ -38,6 +38,7 @@ h2{
     color: var(--white2);
 }
 
+/* reusable classes */
 .center{
     display: flex;
     align-items: center;
@@ -211,3 +212,58 @@ h4{
     letter-spacing: 1px;
     font-size: 3rem;
 }
+
+/* project section  */
+ .project-content{
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(3,1fr);
+    gap: 3rem;
+}
+
+.project-box{
+    position: relative;
+    width: 100%;
+    height: 30rem;
+    border-radius: .5rem;
+    overflow: hidden;
+    /* display: none; */
+}
+.project-box img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+.project-overlay{
+    position: absolute;
+    top: -150%;left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0,0,0,.35);
+    transition: .1s linear;
+}
+.project-overlay h2{
+    line-height: 3rem;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin:  2rem;
+    text-transform: capitalize;
+    color: white;
+}
+.project-overlay .bx{
+    font-size: 2rem;
+    padding: 1rem;
+    background-color: var(--main-clr);
+    color: white;
+    border-radius: .5rem;
+}
+.project-box:hover .project-overlay{
+    top: 0;
+} 
