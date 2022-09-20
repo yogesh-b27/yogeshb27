@@ -276,3 +276,27 @@ h4{
     grid-column-start: 1;
     grid-column-end: 4;
 }
+
+/* contact */
+.contact{
+    padding-bottom: 13rem;
+}
+.contact-form{
+    max-width: 60rem;
+    margin: auto;
+    width: 100%;
+    display: grid;
+    row-gap: 1rem;
+}
+.contact-form input,.contact-form textarea{
+    border: none;outline: none;
+    font-size: 1.5rem;
+    padding: 1.5rem;
+    color: var(--black);
+    background: var(--white2);
+    border-radius: .5rem;
+    resize: none;
+}
+ #send-btn{
+border: none; 
+}
