@@ -22,3 +22,50 @@ loadBtn.onclick =() => {
         loadBtn.style.display = 'none';
     }
 }
+
+//email js
+let sendBtn = document.querySelector('#send-btn');
+let pattern = /^[^ ]+@+[^ ]+\.[a-z]{2,3}$/;
+sendBtn.onclick = (e) =>{
+    e.preventDefault();
+    names = document.querySelector("#name").value;
+    email = document.querySelector("#email").value;
+    message = document.querySelector("#message").value;
+    params = {names ,email , message};
+    if(names==""||email==""||message==""){
+        emptyError();
+    }
+    if(email.match(pattern)){  
+        emailjs.send("service_nddsflu","template_xvsxg8l",params).then(
+            () =>{
+                document.querySelector("#name").value="";
+                document.querySelector("#email").value="";
+                document.querySelector("#message").value="";
+                success();
+            }
+            );
+    }else{
+        emailError()
+    }
+}
+function emailError(){
+    swal({
+        title: "Oh no....",
+        text: "Email is not correct!",
+        icon: "error",
+      });
+}
+function emptyError(){
+    swal({
+        title: "Oh no....",
+        text: "Fields cannot be empty!",
+        icon: "error",
+      });
+}
+function success(){
+    swal({
+        title: "Email sent successfully",
+        text: "I will reply you soon!",
+        icon: "success",
+      });
+}
