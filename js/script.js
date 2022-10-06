@@ -92,3 +92,28 @@ window.onscroll = () =>{
         };
     });
 };
+
+
+//dark-mode light-mode toggle 
+let toggleBtn = document.getElementById('toggle-btn');
+let body = document.body;
+lightMode = localStorage.getItem('light-mode');
+
+if(lightMode === 'enabled'){
+    toggleBtn.classList.replace('bx-sun','bx-moon');
+    body.classList.add('light');
+    localStorage.setItem('light-mode','enabled')
+}
+
+toggleBtn.onclick = (e) => {
+    lightMode = localStorage.getItem('light-mode');
+    if(lightMode === 'disabled'){
+        toggleBtn.classList.replace('bx-sun','bx-moon');
+        body.classList.add('light');
+        localStorage.setItem('light-mode','enabled')
+    }else{
+        toggleBtn.classList.replace('bx-moon','bx-sun');
+        body.classList.remove('light');
+        localStorage.setItem('light-mode','disabled')
+    }
+}

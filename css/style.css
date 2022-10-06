@@ -14,7 +14,12 @@
     --white2: #ddd;
     --main-clr: #2199f3;
 }
-
+.light{
+    --black : #fff;
+    --black2 : #eee;
+    --white : #333;
+    --white2 : #444;
+}
 html{
     scroll-behavior: smooth;
     scroll-padding-top: 5rem;
@@ -71,6 +76,10 @@ h2{
     background-color: var(--main-clr);
     color: var(--white2);
 }
+.light .btn:hover{
+    background-color: var(--white);
+    color: var(--black2);
+}
 .heading{
     font-size: 4rem;
     letter-spacing: 2px;
@@ -92,8 +101,8 @@ header{
     height: 6rem;
     padding: 0 10%;
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
     z-index: 10;
 }
 #logo{
@@ -107,13 +116,13 @@ header{
 #toggle-btn{
     position: relative;
     text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 3rem;
     height: 3rem;
     cursor: pointer;
     color: var(--white2);
-    display: flex;
-    justify-content: center;
-    align-items: center;
     font-size: 2rem ;
     border-radius: 50%;
 }
@@ -121,7 +130,7 @@ header{
     background-color: var(--white2);
     color: var(--black2);
 }
-#toggle-btn.bx-moon{
+.bx-moon{
     transform: rotate(360deg);
 }
 
@@ -190,7 +199,13 @@ h4{
     background: var(--main-clr);
     color: var(--white);
 }
-
+.light .social a{
+    background: rgba(0,0,0,.05);
+}
+.light .social a:hover{
+    background: var(--white2);
+    color: var(--black2);
+}
 /* about section */
 .about-content{
     overflow: hidden;
@@ -202,9 +217,6 @@ h4{
 }
 .Sphere{
     color: var(--main-clr);
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 .tagcloud{
     display: inline-block;
@@ -240,10 +252,7 @@ h4{
     top: -150%;left: 0;
     width: 100%;
     height: 100%;
-    display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
     background-color: rgba(0,0,0,.35);
     transition: .1s linear;
 }
@@ -253,7 +262,7 @@ h4{
     font-size: 2rem;
     font-weight: 700;
     letter-spacing: 1px;
-    margin:  2rem;
+    margin:  1.5rem;
     text-transform: capitalize;
     color: white;
 }
@@ -312,9 +321,7 @@ border: none;
     border-radius: 1rem;
     height: 4.25rem;
     padding: 1rem 3rem;
-    display: flex;
     justify-content: space-around;
-    align-items: center;
     background-color: rgba(255,255,255,.4);
     backdrop-filter: blur(5px);     
 }
@@ -330,8 +337,11 @@ border: none;
     background-color: var(--black2);
     border-radius: 50%;
     padding: .25rem;
-    color: var(--white);
+    color: var(--white2);
     opacity: 1;
+}
+.light #bottom-nav{
+    background-color: rgba(0,0,0,.4);
 }
 
 /*scroll to top*/
@@ -359,3 +369,5 @@ border: none;
 .scroll-top:hover{
     opacity: 1;
 }
+
+
