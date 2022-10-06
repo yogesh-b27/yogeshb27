@@ -71,6 +71,11 @@ function success(){
 }
 
 window.onscroll = () =>{
+
+    //scroll to top
+    let scrollTop = document.querySelector('.scroll-top');
+    scrollTop.classList.toggle("scroll-top-active",window.scrollY>=400);
+
     //active menu on scroll
     let section = document.querySelectorAll('section');
     let navlinks = document.querySelectorAll('nav a');
