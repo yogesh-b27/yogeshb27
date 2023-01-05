@@ -15,7 +15,7 @@ let currentItem = 3;
 loadBtn.onclick =() => {
     let boxes = [...document.querySelectorAll('.project-box')];
     for(var i = currentItem; i<currentItem+3;i++){
-        boxes[i].style.display = 'inline-block';
+        boxes[i].style.display = 'block';
     }
     currentItem+=3;
     if(currentItem>=boxes.length){
@@ -34,8 +34,7 @@ sendBtn.onclick = (e) =>{
     params = {names ,email , message};
     if(names==""||email==""||message==""){
         emptyError();
-    }
-    if(email.match(pattern)){  
+    }else if(email.match(pattern)){  
         emailjs.send("service_nddsflu","template_xvsxg8l",params).then(
             () =>{
                 document.querySelector("#name").value="";
@@ -98,13 +97,11 @@ window.onscroll = () =>{
 let toggleBtn = document.getElementById('toggle-btn');
 let body = document.body;
 lightMode = localStorage.getItem('light-mode');
-
 if(lightMode === 'enabled'){
     toggleBtn.classList.replace('bx-sun','bx-moon');
     body.classList.add('light');
     localStorage.setItem('light-mode','enabled')
 }
-
 toggleBtn.onclick = (e) => {
     lightMode = localStorage.getItem('light-mode');
     if(lightMode === 'disabled'){
@@ -117,3 +114,16 @@ toggleBtn.onclick = (e) => {
         localStorage.setItem('light-mode','disabled')
     }
 }
+
+//preloader
+let value = document.querySelector("#value");
+let progressvalue = 0;
+let progess = setInterval( () =>{
+    progressvalue++;
+    value.textContent = progressvalue +'%' ;
+    if(progressvalue == 101){
+        clearInterval(progess);
+        document.querySelector(".loader").style.display = "none";
+        document.querySelector(".content").style.display = "block";
+    }
+},20);
