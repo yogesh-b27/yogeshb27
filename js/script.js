@@ -69,12 +69,22 @@ function success(){
       });
 }
 
+//custom scrollbar
+function customScroll(){
+    let progress = document.querySelector('#progressbar');
+    let totalHeight = document.body.scrollHeight - window.innerHeight;
+    let progressHeight = (window.pageYOffset / totalHeight)*100;
+    progress.style.height = progressHeight + "%";
+}
+
 window.onscroll = () =>{
 
     //scroll to top
     let scrollTop = document.querySelector('.scroll-top');
     scrollTop.classList.toggle("scroll-top-active",window.scrollY>=400);
 
+    customScroll();
+    
     //active menu on scroll
     let section = document.querySelectorAll('section');
     let navlinks = document.querySelectorAll('nav a');

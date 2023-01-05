@@ -369,8 +369,6 @@ border: none;
     opacity: 1;
 }
 
-
-
 /* website loader */
 .loader{
     display: flex;
@@ -385,4 +383,49 @@ border: none;
 }
 .content{
     display: none;
+}
+
+/* custom scrollbar */
+::-webkit-scrollbar{
+    width: 0;
+}
+#progressbar{
+    z-index: 15;
+    position: fixed;
+    top: 0;right: 0;
+    width: .7rem;
+    height: 0;
+    background: var(--white2);
+}
+#scrollpath{
+    position: fixed;
+    top: 0; right: 0;
+    width: 1rem;
+    height: 100%;
+    background: rgba(0,0,0,0.05) ;
+}
+
+/* responsive design*/
+@media screen and (max-width: 600px) {
+    .about-content{
+        flex-direction: column;
+        overflow: hidden;
+    }
+    .project-content{
+        grid-template-columns: 100%;
+    }
+    .project-box{
+        grid-column-start: 1;
+    }
+  }
+  
+@media screen and (min-width: 600px) {
+    .project-content{
+    grid-template-columns: repeat(3,1fr);
+        overflow: hidden;
+    }
+    #load-more{
+        grid-column-start: 1;
+        grid-column-end: 4;
+    }
 }
